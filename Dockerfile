@@ -6,7 +6,6 @@ RUN pip install --upgrade pip
 RUN pip install asyncpg psycopg-binary sqlalchemy fastapi uvicorn
 RUN make install-dev
 
-
 FROM python:3.10-alpine AS runtime
 WORKDIR /app
 COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
